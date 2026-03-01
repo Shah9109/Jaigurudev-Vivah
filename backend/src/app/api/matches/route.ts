@@ -32,9 +32,9 @@ export async function GET(req: NextRequest) {
     const location = searchParams.get("location");
 
     const matchQuery: any = {
-      "user.profileCompleted": true,
-      "user.status": "active", // Only show active users
-      "user.marriageStatus": "single", // Only show single users
+      // "user.profileCompleted": true, // Relaxed: Show profiles even if not fully 100% complete
+      "user.status": "active",
+      // "user.marriageStatus": "single", // Relaxed: Show all statuses for now to ensure visibility
       "user._id": {
         $ne: new mongoose.Types.ObjectId(session.userId),
         $nin: currentUser.blockedUsers || [],
