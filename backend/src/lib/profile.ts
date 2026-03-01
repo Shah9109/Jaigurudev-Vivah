@@ -18,10 +18,15 @@ export function calculateProfileCompletion(profileData: any): number {
     if (profileData[field]) filled++;
   });
 
-  // galleryImages is array
-  if (profileData.galleryImages && profileData.galleryImages.length > 0) {
-    filled++;
-  }
+  // galleryImages is array (optional for 100% but good to have)
+  // Let's make gallery optional for "profileCompleted" status to be true
+  // Or keep it strict. If strict:
+  // if (profileData.galleryImages && profileData.galleryImages.length > 0) {
+  //   filled++;
+  // }
+  
+  // Total fields to check against
+  const totalFields = fields.length; 
 
-  return Math.round((filled / (fields.length + 1)) * 100);
+  return Math.round((filled / totalFields) * 100);
 }

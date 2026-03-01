@@ -67,12 +67,10 @@ export async function POST(req: NextRequest) {
     const completionPercentage = calculateProfileCompletion(profile.toObject());
     const isComplete = completionPercentage >= 100;
 
-    // Update User
-    if (isComplete !== session.profileCompleted) {
-      await User.findByIdAndUpdate(session.userId, {
+    // Always Update User profile status
+    await User.findByIdAndUpdate(session.userId, {
         profileCompleted: isComplete,
-      });
-    }
+    });
 
     return NextResponse.json(
       { profile, completionPercentage, isComplete },

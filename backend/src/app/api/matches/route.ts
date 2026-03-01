@@ -33,6 +33,8 @@ export async function GET(req: NextRequest) {
 
     const matchQuery: any = {
       "user.profileCompleted": true,
+      "user.status": "active", // Only show active users
+      "user.marriageStatus": "single", // Only show single users
       "user._id": {
         $ne: new mongoose.Types.ObjectId(session.userId),
         $nin: currentUser.blockedUsers || [],
