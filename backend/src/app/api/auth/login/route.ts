@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import dbConnect from "@/lib/db";
-import User from "@/models/User";
+import dbConnect from "../../../../lib/db";
+import User from "../../../../models/User";
 import { loginSchema } from "@/lib/validations";
-import { verifyPassword, generateToken } from "@/lib/auth";
+import { verifyPassword, generateToken } from "../../../../lib/auth";
 import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {

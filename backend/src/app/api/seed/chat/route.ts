@@ -1,9 +1,10 @@
-import { NextResponse } from "next/server";
-import dbConnect from "@/lib/db";
-import User from "@/models/User";
-import Chat from "@/models/Chat";
-import MarriageRequest from "@/models/MarriageRequest";
-import Notification from "@/models/Notification";
+import { NextRequest, NextResponse } from "next/server";
+import { faker } from "@faker-js/faker";
+import dbConnect from "../../../../lib/db";
+import User from "../../../../models/User";
+import Chat from "../../../../models/Chat";
+import MarriageRequest from "../../../../models/MarriageRequest";
+import Notification from "../../../../models/Notification";
 
 export async function GET() {
   try {

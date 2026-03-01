@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import MarriageRequest from "@/models/MarriageRequest";
-import User from "@/models/User";
-import Profile from "@/models/Profile";
-import Notification from "@/models/Notification";
+import { getSession } from "../../../lib/auth";
+import dbConnect from "../../../lib/db";
+import MarriageRequest from "../../../models/MarriageRequest";
+import Notification from "../../../models/Notification";
+import User from "../../../models/User";
+import Profile from "../../../models/Profile";
 import mongoose from "mongoose";
 
 // Helper to calculate age from DOB

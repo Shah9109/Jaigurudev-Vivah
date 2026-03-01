@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import Notification from "@/models/Notification";
+import { getSession } from "../../../lib/auth";
+import dbConnect from "../../../lib/db";
+import Notification from "../../../models/Notification";
 
 export async function GET(req: NextRequest) {
   try {

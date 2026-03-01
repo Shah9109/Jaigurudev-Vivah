@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import Profile from "@/models/Profile";
-import User from "@/models/User";
+import { getSession } from "../../../lib/auth";
+import dbConnect from "../../../lib/db";
+import User from "../../../models/User";
+import Profile from "../../../models/Profile";
 import mongoose from "mongoose";
 
 export async function GET(req: NextRequest) {

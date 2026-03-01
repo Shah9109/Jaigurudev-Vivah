@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import MarriageRequest from "@/models/MarriageRequest";
-import Chat from "@/models/Chat";
+import { getSession } from "../../../../lib/auth";
+import dbConnect from "../../../../lib/db";
+import MarriageRequest from "../../../../models/MarriageRequest";
+import Chat from "../../../../models/Chat";
+import Notification from "../../../../models/Notification";
 import mongoose from "mongoose";
 
 export async function PUT(

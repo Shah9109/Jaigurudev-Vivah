@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import User from "@/models/User";
+import { getSession } from "../../../../lib/auth";
+import dbConnect from "../../../../lib/db";
+import User from "../../../../models/User";
 
 // GET: Fetch all users (with pagination and search)
 export async function GET(req: NextRequest) {

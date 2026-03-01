@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import User from "@/models/User";
-import Profile from "@/models/Profile";
-import MarriageRequest from "@/models/MarriageRequest";
-
+import { getSession } from "../../../../lib/auth";
+import dbConnect from "../../../../lib/db";
+import User from "../../../../models/User";
+import Profile from "../../../../models/Profile";
+import Chat from "../../../../models/Chat";
+import MarriageRequest from "../../../../models/MarriageRequest";
 export async function GET(req: NextRequest) {
   try {
     const session = await getSession();

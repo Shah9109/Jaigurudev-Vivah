@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import Profile from "@/models/Profile";
-import User from "@/models/User";
-import { profileSchema } from "@/lib/validations";
-import { calculateProfileCompletion } from "@/lib/profile";
+import { getSession } from "../../../lib/auth";
+import dbConnect from "../../../lib/db";
+import Profile from "../../../models/Profile";
+import User from "../../../models/User";
+import { profileSchema } from "../../../lib/validations";
+import { calculateProfileCompletion } from "../../../lib/profile";
 
 export async function GET(req: NextRequest) {
   try {

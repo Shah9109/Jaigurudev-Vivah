@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import SystemSetting from "@/models/SystemSetting";
-import dbConnect from "@/lib/db";
-import { getSession } from "@/lib/auth";
+import SystemSetting from "../../../../models/SystemSetting";
+import dbConnect from "../../../../lib/db";
+import { getSession } from "../../../../lib/auth";
 
 // GET: Publicly accessible to fetch donation settings
 export async function GET() {

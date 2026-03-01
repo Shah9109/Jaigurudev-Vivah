@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import dbConnect from "@/lib/db";
-import User from "@/models/User";
-import { joinSchema } from "@/lib/validations";
-import { hashPassword, generateToken } from "@/lib/auth";
+import dbConnect from "../../../../lib/db";
+import User from "../../../../models/User";
+import { joinSchema } from "../../../../lib/validations";
+import { hashPassword, generateToken } from "../../../../lib/auth";
 import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {

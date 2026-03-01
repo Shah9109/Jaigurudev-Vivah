@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import cloudinary from "@/lib/cloudinary";
-import { getSession } from "@/lib/auth";
+import cloudinary from "../../../lib/cloudinary";
+import { getSession } from "../../../lib/auth";
 
 export async function POST(req: NextRequest) {
   try {

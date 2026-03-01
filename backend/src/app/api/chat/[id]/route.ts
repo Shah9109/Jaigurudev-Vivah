@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSession } from "@/lib/auth";
-import dbConnect from "@/lib/db";
-import Chat from "@/models/Chat";
-import User from "@/models/User";
-import Notification from "@/models/Notification";
+import { getSession } from "../../../../lib/auth";
+import dbConnect from "../../../../lib/db";
+import Chat from "../../../../models/Chat";
+import User from "../../../../models/User";
+import Notification from "../../../../models/Notification";
 import mongoose from "mongoose";
 
 export async function GET(

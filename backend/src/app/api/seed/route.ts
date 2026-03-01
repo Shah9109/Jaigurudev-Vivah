@@ -1,9 +1,9 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { faker } from "@faker-js/faker";
-import bcrypt from "bcryptjs";
-import User from "@/models/User";
-import Profile from "@/models/Profile";
-import dbConnect from "@/lib/db";
+import dbConnect from "../../../lib/db";
+import User from "../../../models/User";
+import Profile from "../../../models/Profile";
+import { hashPassword } from "../../../lib/auth";
 
 export async function GET() {
   try {
@@ -11,8 +11,7 @@ export async function GET() {
 
     const createdUsers = [];
     const plainPassword = "password123";
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(plainPassword, salt);
+    const hashedPassword = await hashPassword(plainPassword);
 
     // 1. Create Admin User (Fixed)
     const adminEmail = "admin@jaigurudev.com";
