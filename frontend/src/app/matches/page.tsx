@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/Card";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
-import { User, Filter, X } from "lucide-react";
+import { User, Filter, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Match {
@@ -61,6 +61,7 @@ export default function MatchesPage() {
   
   // Filters
   const [showFilters, setShowFilters] = useState(false);
+  const [search, setSearch] = useState("");
   const [filters, setFilters] = useState({
     gender: "",
     minAge: "",
@@ -86,6 +87,7 @@ export default function MatchesPage() {
     setLoading(true);
     try {
       const queryParams = new URLSearchParams();
+      if (search) queryParams.append("search", search);
       if (filters.gender) queryParams.append("gender", filters.gender);
       if (filters.minAge) queryParams.append("minAge", filters.minAge);
       if (filters.maxAge) queryParams.append("maxAge", filters.maxAge);
@@ -258,19 +260,30 @@ export default function MatchesPage() {
 
       {activeTab === "match" && (
         <div className="space-y-6">
-          <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Filter Matches
-            </h2>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2"
-            >
-              <Filter className="w-4 h-4" />
-              {showFilters ? "Hide Filters" : "Show Filters"}
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center mb-4">
+            <div className="relative w-full sm:w-72">
+                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Input 
+                   placeholder="Search by name..." 
+                   value={search}
+                   onChange={(e) => setSearch(e.target.value)}
+                   className="pl-10"
+                   onKeyDown={(e) => e.key === 'Enter' && fetchMatches()}
+                />
+            </div>
+            <div className="flex gap-2 w-full sm:w-auto">
+                <Button onClick={fetchMatches} className="flex-1 sm:flex-none">
+                    Search
+                </Button>
+                <Button
+                variant="outline"
+                onClick={() => setShowFilters(!showFilters)}
+                className="flex items-center gap-2 flex-1 sm:flex-none"
+                >
+                <Filter className="w-4 h-4" />
+                {showFilters ? "Hide Filters" : "Filters"}
+                </Button>
+            </div>
           </div>
 
           <AnimatePresence>

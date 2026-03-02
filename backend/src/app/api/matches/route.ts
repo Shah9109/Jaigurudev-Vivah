@@ -25,6 +25,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "10");
+    const search = searchParams.get("search");
     const gender = searchParams.get("gender");
     const minAge = searchParams.get("minAge");
     const maxAge = searchParams.get("maxAge");
@@ -32,14 +33,17 @@ export async function GET(req: NextRequest) {
     const location = searchParams.get("location");
 
     const matchQuery: any = {
-      // "user.profileCompleted": true, // Relaxed: Show profiles even if not fully 100% complete
+      "user.profileCompleted": true, // Ensure only completed profiles are visible
       "user.status": "active",
-      // "user.marriageStatus": "single", // Relaxed: Show all statuses for now to ensure visibility
       "user._id": {
         $ne: new mongoose.Types.ObjectId(session.userId),
         $nin: currentUser.blockedUsers || [],
       },
     };
+
+    if (search) {
+      matchQuery["user.name"] = { $regex: search, $options: "i" };
+    }
 
     if (gender && gender !== "All") {
       matchQuery.gender = gender;
