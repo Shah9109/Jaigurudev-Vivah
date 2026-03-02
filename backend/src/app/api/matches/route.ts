@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
     const location = searchParams.get("location");
 
     const matchQuery: any = {
-      "user.profileCompleted": true, // Ensure only completed profiles are visible
+      // "user.profileCompleted": true, // Allow all active users to be seen
       "user.status": "active",
       "user._id": {
         $ne: new mongoose.Types.ObjectId(session.userId),
