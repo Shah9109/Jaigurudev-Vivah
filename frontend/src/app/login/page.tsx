@@ -108,16 +108,17 @@ export default function LoginPage() {
                 onChange={handleChange}
               />
             </div>
-            <Button className="w-full" type="submit" disabled={loading}>
+
+            <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Logging in..." : "Login"}
             </Button>
           </form>
         </CardContent>
-        <CardFooter className="justify-center">
+        <CardFooter className="flex justify-center">
           <p className="text-sm text-gray-500">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/join" className="text-primary hover:underline">
-              Join Now
+              Join now
             </Link>
           </p>
         </CardFooter>

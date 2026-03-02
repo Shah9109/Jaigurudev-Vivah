@@ -128,7 +128,7 @@ export function DonationSection() {
                 
                 <div className="pt-4 text-center">
                   <p className="text-sm text-gray-500 italic">
-                    "No confirmation required. Simply scan or copy to donate."
+                    &quot;No confirmation required. Simply scan or copy to donate.&quot;
                   </p>
                 </div>
              </div>

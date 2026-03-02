@@ -87,7 +87,7 @@ export default function Home() {
                         <h2 className="text-xl md:text-2xl font-bold text-gray-800">Start Your Sacred Journey</h2>
                         <div className="text-gray-600 text-base md:text-lg leading-relaxed space-y-2">
                             <p className="font-hindi text-lg font-medium text-gray-800">
-                                "संस्कार, श्रद्धा और मर्यादा सहित जैगुरुदेव सत्संग में वैवाहिक परिचय"
+                                &quot;संस्कार, श्रद्धा और मर्यादा सहित जैगुरुदेव सत्संग में वैवाहिक परिचय&quot;
                             </p>
                         </div>
                     </div>

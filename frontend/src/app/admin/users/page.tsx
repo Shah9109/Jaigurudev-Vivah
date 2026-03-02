@@ -23,6 +23,7 @@ export default function UserManagement() {
 
   useEffect(() => {
     fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, search]); // Re-fetch when page or search changes
 
   const fetchUsers = async () => {

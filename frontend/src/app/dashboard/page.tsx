@@ -98,14 +98,21 @@ export default function DashboardPage() {
         <div className="mb-8 flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm border border-gray-100">
              <div className="relative">
                 <img 
-                    src="https://imgs.search.brave.com/RoSyR9SJeZ-WRZpd001V97vAp_Zq66sXgSEIv95Z6qU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzI5Lzkw/LzY1LzI5OTA2NWE3/ZGJjYTg1YzZhMzIz/ZjJkZjIwMjBlYTM0/LmpwZw"
-                    alt="Param Sant Baba Jaigurudev"
-                    className="h-48 w-auto rounded-lg shadow-md object-cover"
+                  src="https://imgs.search.brave.com/RoSyR9SJeZ-WRZpd001V97vAp_Zq66sXgSEIv95Z6qU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzI5Lzkw/LzY1LzI5OTA2NWE3/ZGJjYTg1YzZhMzIz/ZjJkZjIwMjBlYTM0/LmpwZw"
+                  alt="Jaigurudev"
+                  className="rounded-lg shadow-lg max-w-full h-auto max-h-96 object-cover"
                 />
              </div>
-             <div className="text-center mt-4 space-y-1">
-                <p className="text-lg font-bold text-gray-800">Param Sant Baba Jaigurudev</p>
-                <p className="text-md italic text-orange-600 font-serif font-medium">"Kripya Guru Panth ki maryada banaye rakhein"</p>
+             <div className="mt-6 text-center max-w-2xl space-y-4">
+                <h2 className="text-2xl font-bold text-primary">Param Sant Baba Jaigurudev</h2>
+                <p className="text-gray-600 italic">
+                  &quot;Marriage is a sacred bond of two souls.&quot;
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Welcome to the official matrimonial platform for the Jaigurudev Sangat. 
+                  Find your life partner with the blessings of Param Sant Baba Jaigurudev Ji Maharaj.
+                  This platform is dedicated to bringing together devotees in holy matrimony.
+                </p>
              </div>
         </div>
 

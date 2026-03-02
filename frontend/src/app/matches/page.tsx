@@ -75,6 +75,7 @@ export default function MatchesPage() {
     } else {
       fetchRequests();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, filters]); // Re-fetch when tab or filters change
 
   const handleProfileClick = (userId: string) => {
